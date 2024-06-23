@@ -13,6 +13,7 @@ import avatar from '../assets/react.svg'
 const navItems=[
   {path:'/',name:'Home'},
   {path:'/tours',name:'Tours'},
+  {path:'/sport',name:'Sport'},
   /*{path:'/dashboard',name:'Admin'}, */
 ]
 

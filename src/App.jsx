@@ -12,6 +12,8 @@ import { Navigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from './context/UserContext'
 import { Outlet } from 'react-router-dom';
+import { Sport } from './components/Sport'
+import {QueryClient, QueryClientProvider} from 'react-query'
 /*
 const router=createBrowserRouter([
   {
@@ -26,6 +28,7 @@ const router=createBrowserRouter([
     children:[
        {path:'/',element:<Home/>},
         {path:'/tours',element:<Tours/>},
+        {path:'/sport',element:<Sport/>},
         {path:'/login',element:<Login/>},
         {path:'*',element:<NotFound/>},
     ]
@@ -58,6 +61,10 @@ const router = createBrowserRouter([
         element: <Tours />,
       },
       {
+        path: '/sport',
+        element: <Sport />,
+      },
+      {
         path: '/login',
         element: <Login />,
       },
@@ -77,11 +84,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient=new QueryClient()
+
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
      <RouterProvider router={router}/>
-    </>
+    </QueryClientProvider>
   )
 }
 
