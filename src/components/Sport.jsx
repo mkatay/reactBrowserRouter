@@ -4,9 +4,9 @@ import { getNemzetek } from '../utils'
 
 
 export const Sport = () => {
-    const {data,isLoading,status}=useQuery('nemzetek',getNemzetek)
+    const {data:dataNemzetek,isLoading,status:statusNemzetek}=useQuery('nemzetek',getNemzetek)
 
-    status=='success' && console.log(data);
+    statusNemzetek=='success' && console.log(dataNemzetek);
 
   return (
     <div>Sport</div>
